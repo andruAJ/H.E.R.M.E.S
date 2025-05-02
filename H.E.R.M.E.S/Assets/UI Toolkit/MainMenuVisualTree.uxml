@@ -1,7 +1,9 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStylesheet.uss?fileID=7433441132597879392&amp;guid=9c29c83843c2ac1429666f5fb7a558d6&amp;type=3#MainMenuStylesheet" />
-    <engine:VisualElement name="Container" style="flex-grow: 1;">
+    <engine:VisualElement name="Container" style="flex-grow: 1; background-color: rgb(126, 217, 87);">
         <engine:Label text="H.E.R.M.E.S" name="label" selectable="false" double-click-selects-word="false" class="header Title" />
-        <engine:Button text="Button" class="button" />
+        <engine:Button text="Inspeccionar modelos" class="button MainButton" />
+        <engine:Button text="Inspeccionar mapa" class="button MainButton" />
+        <engine:Button text="Video informativo" class="button MainButton" />
     </engine:VisualElement>
 </engine:UXML>
