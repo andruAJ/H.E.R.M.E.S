@@ -1,9 +1,9 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/InspectorStylesheet.uss?fileID=7433441132597879392&amp;guid=491a6e1e807068741baa653aba88600b&amp;type=3#InspectorStylesheet" />
     <engine:VisualElement name="Container" style="flex-grow: 1;">
-        <engine:Button text="RotarIzq" class="InspectoButtons" style="align-self: center; justify-content: center; align-content: center; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; background-position-x: center 0; right: 12%; top: 90%;" />
-        <engine:Button text="RotarDer" class="InspectoButtons" style="right: auto; top: 82.5%; left: 12%;" />
-        <engine:Button text="Capas" class="InspectoButtons" style="right: 35%; top: 75%;" />
-        <engine:Button text="Lupa" name="Button" class="InspectoButtons" style="left: 35%; top: 67.8%;" />
+        <engine:Button text="RotarIzq" name="RotateLeftButton" class="InspectoButtons" style="align-self: center; justify-content: center; align-content: center; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; background-position-x: center 0; right: 12%; top: 90%;" />
+        <engine:Button text="RotarDer" name="RotateRightButton" class="InspectoButtons" style="right: auto; top: 82.5%; left: 12%;" />
+        <engine:Button text="Capas" name="capas" class="InspectoButtons" style="right: 35%; top: 75%;" />
+        <engine:Button name="lupa" class="InspectoButtons" style="left: 35%; top: 60%; background-image: url(&quot;project://database/Assets/Sprites/Blanco/ZoomIn.png?fileID=2800000&amp;guid=2455e93c882cc4f468b07ffa67d6f677&amp;type=3#ZoomIn&quot;); background-color: rgba(255, 255, 255, 0); height: 16%; width: 9.6%;" />
     </engine:VisualElement>
 </engine:UXML>
