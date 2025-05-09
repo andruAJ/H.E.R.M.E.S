@@ -8,7 +8,7 @@
     -unity-font-definition: url("project://database/Assets/UI%20Toolkit/Fonts/Montserrat-Black.otf?fileID=12800000&guid=12e50e6349184404da805bb0db07e7ad&type=3#Montserrat-Black");
     color: rgb(255, 255, 255);
     -unity-text-outline-color: rgb(0, 128, 128);
-    -unity-text-outline-width: 7px;
+    -unity-text-outline-width: 0;
     background-color: rgb(255, 255, 255);
     text-shadow: 0 0 0 rgba(0, 128, 128, 0);
     justify-content: center;
