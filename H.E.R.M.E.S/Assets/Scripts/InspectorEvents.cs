@@ -10,6 +10,7 @@ public class InspectorEvents : MonoBehaviour
     private Button rotateRightButton;
     private Button lupa;
     private Button capas;
+    private VisualElement informationPanel;
 
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
