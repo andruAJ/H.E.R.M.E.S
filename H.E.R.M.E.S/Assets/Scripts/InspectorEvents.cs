@@ -22,17 +22,43 @@ public class InspectorEvents : MonoBehaviour
     {
         uiDocument = GetComponent<UIDocument>();
         rotateLeftButton = uiDocument.rootVisualElement.Q("RotateLeftButton") as Button;
-        rotateLeftButton.RegisterCallback<ClickEvent>(evt =>
+        rotateLeftButton.RegisterCallback<PointerDownEvent>(evt =>
         {
             isRotatingLeft = true;
-            Debug.Log("LeftButton Down");
-        });
+            isRotatingRight = false;
+            Debug.Log("leftButton PointerDown");
+        }, TrickleDown.TrickleDown);
+        rotateLeftButton.RegisterCallback<PointerUpEvent>(evt =>
+        {
+                isRotatingLeft = false;
+                isRotatingRight = false;
+                Debug.Log("leftButton PointerUp");
+        }, TrickleDown.TrickleDown);
+        rotateLeftButton.RegisterCallback<PointerCancelEvent>(evt =>
+        {
+            isRotatingRight = false;
+            isRotatingLeft = false;
+            Debug.Log("Canceled event");
+        }, TrickleDown.TrickleDown);
         rotateRightButton = uiDocument.rootVisualElement.Q("RotateRightButton") as Button;
-        rotateRightButton.RegisterCallback<ClickEvent>(evt =>
+        rotateRightButton.RegisterCallback<PointerDownEvent>(evt =>
         {
             isRotatingRight = true;
-            Debug.Log("RightButton Down");
-        });
+            isRotatingLeft = false;
+            Debug.Log("RightButton PointerDown");
+        }, TrickleDown.TrickleDown);
+        rotateRightButton.RegisterCallback<PointerUpEvent>(evt =>
+        {
+            isRotatingRight = false;
+            isRotatingLeft = false;
+            Debug.Log("RightButton PointerUp");
+        }, TrickleDown.TrickleDown);
+        rotateRightButton.RegisterCallback<PointerCancelEvent>(evt =>
+        {
+            isRotatingRight = false;
+            isRotatingLeft = false;
+            Debug.Log("Canceled event");
+        }, TrickleDown.TrickleDown);
         lupa = uiDocument.rootVisualElement.Q("lupa") as Button;
         lupa.RegisterCallback<ClickEvent>(ZoomEvent);
         capas = uiDocument.rootVisualElement.Q("capas") as Button;
@@ -44,43 +70,6 @@ public class InspectorEvents : MonoBehaviour
             return;
         }
     }
-
-    //private void OnEnable()
-    //{
-    //    Botón Izquierdo
-    //    rotateLeftButton.RegisterCallback<PointerDownEvent>(evt =>
-    //    {
-    //        isRotatingLeft = true;
-    //        Debug.Log("LeftButton Down");
-    //    });
-    //    rotateLeftButton.RegisterCallback<PointerUpEvent>(evt =>
-    //    {
-    //        isRotatingLeft = false;
-    //        Debug.Log("LeftButton Up");
-    //    });
-    //    rotateLeftButton.RegisterCallback<PointerCancelEvent>(evt =>
-    //    {
-    //        isRotatingLeft = false;
-    //        Debug.Log("LeftButton Cancel");
-    //    });
-
-    //    Botón Derecho
-    //    rotateRightButton.RegisterCallback<PointerDownEvent>(evt =>
-    //    {
-    //        isRotatingRight = true;
-    //        Debug.Log("RightButton Down");
-    //    });
-    //    rotateRightButton.RegisterCallback<PointerUpEvent>(evt =>
-    //    {
-    //        isRotatingRight = false;
-    //        Debug.Log("RightButton Up");
-    //    });
-    //    rotateRightButton.RegisterCallback<PointerCancelEvent>(evt =>
-    //    {
-    //        isRotatingRight = false;
-    //        Debug.Log("RightButton Cancel");
-    //    });
-    //}
     private void ZoomEvent(ClickEvent evt) 
     {
     
@@ -99,6 +88,11 @@ public class InspectorEvents : MonoBehaviour
         else if (isRotatingRight)
         {
             OnRotatingRight?.Invoke(1);
+        }
+        else 
+        {
+            OnRotatingRight?.Invoke(0);
+            OnRotatingRight?.Invoke(0);
         }
     }
 }

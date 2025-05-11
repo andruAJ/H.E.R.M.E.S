@@ -21,6 +21,5 @@ public class CameraRotation : MonoBehaviour
             Vector3.up,
             direction * rotationSpeed * Time.deltaTime
         );
-        Debug.Log("Rotating");
     }
 }
