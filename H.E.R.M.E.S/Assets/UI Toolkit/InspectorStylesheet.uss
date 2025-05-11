@@ -23,3 +23,29 @@
     align-content: flex-start;
     flex-basis: auto;
 }
+
+.InformationPanels {
+    align-items: center;
+    align-self: center;
+    width: 7.2%;
+    height: 8%;
+    -unity-text-align: middle-center;
+    font-size: 285%;
+    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/Fonts/Metropolis-Light.otf?fileID=12800000&guid=a55ec911e07678b48b76e549ca05e6f1&type=3#Metropolis-Light");
+    color: rgb(255, 255, 255);
+    -unity-text-outline-color: rgba(255, 255, 255, 0);
+    -unity-text-outline-width: 0;
+    background-color: rgb(255, 255, 255);
+    text-shadow: 0 0 0 rgba(0, 128, 128, 0);
+    justify-content: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    top: 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    transform-origin: bottom;
+    align-content: center;
+    flex-basis: auto;
+}

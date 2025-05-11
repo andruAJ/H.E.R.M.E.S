@@ -8,6 +8,9 @@ TagManager:
   - Asientos
   - Panel superior
   - Panel inferior
+  - Banda transportadora vertical
+  - Banda transportadora horizontal
+  - Intercambiador
   layers:
   - Default
   - TransparentFX

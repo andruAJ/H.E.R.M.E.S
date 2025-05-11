@@ -26,38 +26,32 @@ public class InspectorEvents : MonoBehaviour
         {
             isRotatingLeft = true;
             isRotatingRight = false;
-            Debug.Log("leftButton PointerDown");
         }, TrickleDown.TrickleDown);
         rotateLeftButton.RegisterCallback<PointerUpEvent>(evt =>
         {
                 isRotatingLeft = false;
                 isRotatingRight = false;
-                Debug.Log("leftButton PointerUp");
         }, TrickleDown.TrickleDown);
         rotateLeftButton.RegisterCallback<PointerCancelEvent>(evt =>
         {
             isRotatingRight = false;
             isRotatingLeft = false;
-            Debug.Log("Canceled event");
         }, TrickleDown.TrickleDown);
         rotateRightButton = uiDocument.rootVisualElement.Q("RotateRightButton") as Button;
         rotateRightButton.RegisterCallback<PointerDownEvent>(evt =>
         {
             isRotatingRight = true;
             isRotatingLeft = false;
-            Debug.Log("RightButton PointerDown");
         }, TrickleDown.TrickleDown);
         rotateRightButton.RegisterCallback<PointerUpEvent>(evt =>
         {
             isRotatingRight = false;
             isRotatingLeft = false;
-            Debug.Log("RightButton PointerUp");
         }, TrickleDown.TrickleDown);
         rotateRightButton.RegisterCallback<PointerCancelEvent>(evt =>
         {
             isRotatingRight = false;
             isRotatingLeft = false;
-            Debug.Log("Canceled event");
         }, TrickleDown.TrickleDown);
         lupa = uiDocument.rootVisualElement.Q("lupa") as Button;
         lupa.RegisterCallback<ClickEvent>(ZoomEvent);
@@ -72,7 +66,7 @@ public class InspectorEvents : MonoBehaviour
     }
     private void ZoomEvent(ClickEvent evt) 
     {
-    
+        
     }
     private void CapasEvent(ClickEvent evt)
     {
