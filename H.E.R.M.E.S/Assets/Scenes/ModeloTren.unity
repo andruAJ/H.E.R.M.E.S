@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &212443051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5095005566997315931, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+  m_PrefabInstance: {fileID: 8937565049196301120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &626041325
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +277,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3302087407034138929, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
   m_PrefabInstance: {fileID: 8937565049196301120}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &831233549
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212443051}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1798ca18ec95f4d4e99baaf0c3324ca8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &864625826 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 846304456090245505, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
@@ -489,7 +516,6 @@ GameObject:
   - component: {fileID: 1929360752}
   - component: {fileID: 1929360751}
   - component: {fileID: 1929360753}
-  - component: {fileID: 1929360754}
   m_Layer: 5
   m_Name: InspectorCanvas
   m_TagString: UI
@@ -544,28 +570,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
---- !u!95 &1929360754
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929360750}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1798ca18ec95f4d4e99baaf0c3324ca8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2104677748 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5195787315757896484, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
@@ -657,6 +661,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Tren
       objectReference: {fileID: 0}
+    - target: {fileID: 5716808818671082513, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: m_TagString
+      value: Banda transportadora vertical
+      objectReference: {fileID: 0}
     - target: {fileID: 6502024906279496782, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -667,6 +675,9 @@ PrefabInstance:
     - {fileID: 4762276856001423517, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5095005566997315931, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 831233549}
     - targetCorrespondingSourceObject: {fileID: 788021464965921525, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1003761480}
