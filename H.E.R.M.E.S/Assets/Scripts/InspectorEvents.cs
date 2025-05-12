@@ -1,5 +1,6 @@
 using Mono.Cecil.Cil;
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,6 +15,7 @@ public class InspectorEvents : MonoBehaviour
 
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
+    private bool explode = false;
 
     public static event Action<int> OnRotatingLeft;
     public static event Action<int> OnRotatingRight;
@@ -70,7 +72,33 @@ public class InspectorEvents : MonoBehaviour
     }
     private void CapasEvent(ClickEvent evt)
     {
+        if (!explode) 
+        {
+            GameObject panelInferior = GameObject.FindWithTag("Panel inferior");
+            GameObject panelSuperior = GameObject.FindWithTag("Panel superior");
+            GameObject bandaHorizontal = GameObject.FindWithTag("Banda transportadora horizontal").transform.GetChild(0).gameObject;
+            GameObject bordeCorte = null;
+            GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+            foreach (GameObject obj in allObjects)
+            {
+                if (obj.CompareTag("Borde corte"))
+                {
+                    bordeCorte = obj;
+                    break;
+                }
+            }
 
+            panelInferior.SetActive(false);
+            panelSuperior.SetActive(false);
+            bandaHorizontal.SetActive(false);
+            bordeCorte.SetActive(true);
+
+            explode = true;
+        }    
+        else if(explode) 
+        {
+        
+        }
     }
 
     private void Update()

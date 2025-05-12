@@ -11,6 +11,7 @@ TagManager:
   - Banda transportadora vertical
   - Banda transportadora horizontal
   - Intercambiador
+  - UI
   layers:
   - Default
   - TransparentFX
