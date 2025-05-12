@@ -16,13 +16,18 @@ public class InspectorEvents : MonoBehaviour
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool explode = false;
+    private bool de_explode = false;
+    private bool regroup = false;
 
     public static event Action<int> OnRotatingLeft;
     public static event Action<int> OnRotatingRight;
 
+    public Animator animator;
+
     void Start()
     {
         uiDocument = GetComponent<UIDocument>();
+        animator = GetComponent<Animator>();
         rotateLeftButton = uiDocument.rootVisualElement.Q("RotateLeftButton") as Button;
         rotateLeftButton.RegisterCallback<PointerDownEvent>(evt =>
         {
@@ -72,7 +77,7 @@ public class InspectorEvents : MonoBehaviour
     }
     private void CapasEvent(ClickEvent evt)
     {
-        if (!explode) 
+        if (!explode && !de_explode && !regroup) 
         {
             GameObject panelInferior = GameObject.FindWithTag("Panel inferior");
             GameObject panelSuperior = GameObject.FindWithTag("Panel superior");
@@ -97,7 +102,41 @@ public class InspectorEvents : MonoBehaviour
         }    
         else if(explode) 
         {
-        
+            animator.SetTrigger("Exploding");
+            explode = false;
+            de_explode = true;
+            Debug.Log("Explosion");
+        }
+        else if (de_explode) 
+        {
+            animator.SetTrigger("De-exploding");
+            de_explode = false;
+            regroup = true;
+            Debug.Log("De exploding");
+        }
+        else if (regroup) 
+        {
+
+            GameObject panelInferior = GameObject.FindWithTag("Panel inferior");
+            GameObject panelSuperior = GameObject.FindWithTag("Panel superior");
+            GameObject bandaHorizontal = GameObject.FindWithTag("Banda transportadora horizontal").transform.GetChild(0).gameObject;
+            GameObject bordeCorte = null;
+            GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+            foreach (GameObject obj in allObjects)
+            {
+                if (obj.CompareTag("Borde corte"))
+                {
+                    bordeCorte = obj;
+                    break;
+                }
+            }
+
+            panelInferior.SetActive(true);
+            panelSuperior.SetActive(true);
+            bandaHorizontal.SetActive(true);
+            bordeCorte.SetActive(false);
+            regroup = false;
+            Debug.Log("re agrupando");
         }
     }
 

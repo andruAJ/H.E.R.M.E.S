@@ -12,6 +12,9 @@ TagManager:
   - Banda transportadora horizontal
   - Intercambiador
   - UI
+  - Borde corte
+  - Panell superior derecho
+  - panel inferior derecho
   layers:
   - Default
   - TransparentFX
