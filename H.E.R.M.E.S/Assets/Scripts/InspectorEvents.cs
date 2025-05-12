@@ -27,7 +27,7 @@ public class InspectorEvents : MonoBehaviour
     void Start()
     {
         uiDocument = GetComponent<UIDocument>();
-        animator = GetComponent<Animator>();
+        animator = GameObject.FindWithTag("Tren").GetComponent<Animator>();
         rotateLeftButton = uiDocument.rootVisualElement.Q("RotateLeftButton") as Button;
         rotateLeftButton.RegisterCallback<PointerDownEvent>(evt =>
         {
@@ -102,6 +102,8 @@ public class InspectorEvents : MonoBehaviour
         }    
         else if(explode) 
         {
+            GameObject bordecorte = GameObject.FindWithTag("Borde corte");
+            bordecorte.SetActive(false);
             animator.SetTrigger("Exploding");
             explode = false;
             de_explode = true;
@@ -112,14 +114,6 @@ public class InspectorEvents : MonoBehaviour
             animator.SetTrigger("De-exploding");
             de_explode = false;
             regroup = true;
-            Debug.Log("De exploding");
-        }
-        else if (regroup) 
-        {
-
-            GameObject panelInferior = GameObject.FindWithTag("Panel inferior");
-            GameObject panelSuperior = GameObject.FindWithTag("Panel superior");
-            GameObject bandaHorizontal = GameObject.FindWithTag("Banda transportadora horizontal").transform.GetChild(0).gameObject;
             GameObject bordeCorte = null;
             GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
             foreach (GameObject obj in allObjects)
@@ -130,10 +124,35 @@ public class InspectorEvents : MonoBehaviour
                     break;
                 }
             }
-
-            panelInferior.SetActive(true);
-            panelSuperior.SetActive(true);
-            bandaHorizontal.SetActive(true);
+            bordeCorte.SetActive(true);
+            animator.SetTrigger("GoingToIdle");
+            Debug.Log("De exploding");
+        }
+        else if (regroup) 
+        {
+            GameObject panelInferior = null;
+            GameObject panelSuperior = null;
+            GameObject bandaHorizontal = null;
+            GameObject bordeCorte = GameObject.FindWithTag("Borde corte");
+            GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+            foreach (GameObject obj in allObjects)
+            {
+                if (obj.CompareTag("Panel inferior"))
+                {
+                    panelInferior = obj;
+                    panelInferior.SetActive(true);
+                }
+                else if (obj.CompareTag("Panel superior")) 
+                {
+                    panelSuperior = obj;
+                    panelSuperior.SetActive(true);
+                }
+                else if (obj.CompareTag("Banda transportadora horizontal"))
+                {
+                    bandaHorizontal = obj.transform.GetChild(0).gameObject;
+                    bandaHorizontal.SetActive(true);
+                }
+            }    
             bordeCorte.SetActive(false);
             regroup = false;
             Debug.Log("re agrupando");
