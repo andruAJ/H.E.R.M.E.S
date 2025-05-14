@@ -609,6 +609,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 788021464965921525, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: m_TagString
+      value: Banda transportadora horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 846304456090245505, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: m_TagString
+      value: Banda transportadora horizontal
+      objectReference: {fileID: 0}
     - target: {fileID: 3302087407034138929, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -653,6 +661,42 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4269752212855431504, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: m_TagString
+      value: Banda transportadora vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630514465204219019, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: asientos
+      value: 
+      objectReference: {fileID: 11400000, guid: 0af291863d5cb1a4ea112aeb207f96ad, type: 2}
+    - target: {fileID: 4630514465204219019, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelInfDer
+      value: 
+      objectReference: {fileID: 11400000, guid: 74ea28b036897eb4f82c6a0e2ffab0b5, type: 2}
+    - target: {fileID: 4630514465204219019, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelInfIzq
+      value: 
+      objectReference: {fileID: 11400000, guid: 49399790c91ce7842b591a09eaba0fe2, type: 2}
+    - target: {fileID: 4630514465204219019, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelSupDer
+      value: 
+      objectReference: {fileID: 11400000, guid: e0f84415151ad344e95fdd5e30f18cc9, type: 2}
+    - target: {fileID: 4630514465204219019, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelSupIzq
+      value: 
+      objectReference: {fileID: 11400000, guid: 095d1028fb3ca0148887f101d09546a8, type: 2}
+    - target: {fileID: 4630514465204219019, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: bandaTransVert
+      value: 
+      objectReference: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
+    - target: {fileID: 4630514465204219019, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: intercambiador
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+    - target: {fileID: 4630514465204219019, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: bandaTransHoriz
+      value: 
+      objectReference: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
     - target: {fileID: 5095005566997315931, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
       propertyPath: m_Name
       value: Tren
@@ -660,6 +704,10 @@ PrefabInstance:
     - target: {fileID: 5095005566997315931, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
       propertyPath: m_TagString
       value: Tren
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195787315757896484, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: m_TagString
+      value: Banda transportadora vertical
       objectReference: {fileID: 0}
     - target: {fileID: 5716808818671082513, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
       propertyPath: m_TagString
@@ -669,6 +717,134 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6579959506384872271, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: asientos
+      value: 
+      objectReference: {fileID: 11400000, guid: 0af291863d5cb1a4ea112aeb207f96ad, type: 2}
+    - target: {fileID: 6579959506384872271, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelInfDer
+      value: 
+      objectReference: {fileID: 11400000, guid: 74ea28b036897eb4f82c6a0e2ffab0b5, type: 2}
+    - target: {fileID: 6579959506384872271, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelInfIzq
+      value: 
+      objectReference: {fileID: 11400000, guid: 49399790c91ce7842b591a09eaba0fe2, type: 2}
+    - target: {fileID: 6579959506384872271, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelSupDer
+      value: 
+      objectReference: {fileID: 11400000, guid: e0f84415151ad344e95fdd5e30f18cc9, type: 2}
+    - target: {fileID: 6579959506384872271, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelSupIzq
+      value: 
+      objectReference: {fileID: 11400000, guid: 095d1028fb3ca0148887f101d09546a8, type: 2}
+    - target: {fileID: 6579959506384872271, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: bandaTransVert
+      value: 
+      objectReference: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
+    - target: {fileID: 6579959506384872271, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: intercambiador
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+    - target: {fileID: 6579959506384872271, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: bandaTransHoriz
+      value: 
+      objectReference: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
+    - target: {fileID: 7839921261394668991, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: asientos
+      value: 
+      objectReference: {fileID: 11400000, guid: 0af291863d5cb1a4ea112aeb207f96ad, type: 2}
+    - target: {fileID: 7839921261394668991, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelInfDer
+      value: 
+      objectReference: {fileID: 11400000, guid: 74ea28b036897eb4f82c6a0e2ffab0b5, type: 2}
+    - target: {fileID: 7839921261394668991, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelInfIzq
+      value: 
+      objectReference: {fileID: 11400000, guid: 49399790c91ce7842b591a09eaba0fe2, type: 2}
+    - target: {fileID: 7839921261394668991, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelSupDer
+      value: 
+      objectReference: {fileID: 11400000, guid: e0f84415151ad344e95fdd5e30f18cc9, type: 2}
+    - target: {fileID: 7839921261394668991, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelSupIzq
+      value: 
+      objectReference: {fileID: 11400000, guid: 095d1028fb3ca0148887f101d09546a8, type: 2}
+    - target: {fileID: 7839921261394668991, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: bandaTransVert
+      value: 
+      objectReference: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
+    - target: {fileID: 7839921261394668991, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: intercambiador
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+    - target: {fileID: 7839921261394668991, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: bandaTransHoriz
+      value: 
+      objectReference: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
+    - target: {fileID: 8341267214862972193, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: asientos
+      value: 
+      objectReference: {fileID: 11400000, guid: 0af291863d5cb1a4ea112aeb207f96ad, type: 2}
+    - target: {fileID: 8341267214862972193, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelInfDer
+      value: 
+      objectReference: {fileID: 11400000, guid: 74ea28b036897eb4f82c6a0e2ffab0b5, type: 2}
+    - target: {fileID: 8341267214862972193, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelInfIzq
+      value: 
+      objectReference: {fileID: 11400000, guid: 49399790c91ce7842b591a09eaba0fe2, type: 2}
+    - target: {fileID: 8341267214862972193, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelSupDer
+      value: 
+      objectReference: {fileID: 11400000, guid: e0f84415151ad344e95fdd5e30f18cc9, type: 2}
+    - target: {fileID: 8341267214862972193, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelSupIzq
+      value: 
+      objectReference: {fileID: 11400000, guid: 095d1028fb3ca0148887f101d09546a8, type: 2}
+    - target: {fileID: 8341267214862972193, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: bandaTransVert
+      value: 
+      objectReference: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
+    - target: {fileID: 8341267214862972193, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: intercambiador
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+    - target: {fileID: 8341267214862972193, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: bandaTransHoriz
+      value: 
+      objectReference: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
+    - target: {fileID: 8533440492381314812, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: asientos
+      value: 
+      objectReference: {fileID: 11400000, guid: 0af291863d5cb1a4ea112aeb207f96ad, type: 2}
+    - target: {fileID: 8533440492381314812, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelInfDer
+      value: 
+      objectReference: {fileID: 11400000, guid: 74ea28b036897eb4f82c6a0e2ffab0b5, type: 2}
+    - target: {fileID: 8533440492381314812, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelInfIzq
+      value: 
+      objectReference: {fileID: 11400000, guid: 49399790c91ce7842b591a09eaba0fe2, type: 2}
+    - target: {fileID: 8533440492381314812, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelSupDer
+      value: 
+      objectReference: {fileID: 11400000, guid: e0f84415151ad344e95fdd5e30f18cc9, type: 2}
+    - target: {fileID: 8533440492381314812, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: panelSupIzq
+      value: 
+      objectReference: {fileID: 11400000, guid: 095d1028fb3ca0148887f101d09546a8, type: 2}
+    - target: {fileID: 8533440492381314812, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: bandaTransVert
+      value: 
+      objectReference: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
+    - target: {fileID: 8533440492381314812, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: intercambiador
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+    - target: {fileID: 8533440492381314812, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: bandaTransHoriz
+      value: 
+      objectReference: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
     m_RemovedComponents:
     - {fileID: 1623029249932159535, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
     m_RemovedGameObjects:
