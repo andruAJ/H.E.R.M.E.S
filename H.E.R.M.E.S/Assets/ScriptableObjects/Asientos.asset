@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Asientos
   m_EditorClassIdentifier: 
   nombre: Asientos
-  description: 
-  material: 
+  description: "Descripci\xF3n asientos"
+  material: Material asientos

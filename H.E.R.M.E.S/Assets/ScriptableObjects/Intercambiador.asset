@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Intercambiador
   m_EditorClassIdentifier: 
   nombre: Intercambiador
-  description: 
-  material: 
+  description: "Descripci\xF3n intercambiador"
+  material: Material intercambiador

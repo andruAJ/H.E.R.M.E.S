@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Panel Superior izquierdo
   m_EditorClassIdentifier: 
   nombre: Panel superior izquierdo
-  description: 
-  material: 
+  description: "descripci\xF3n panel superior izquierdo"
+  material: Material panel superior izquierdo

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Banda Transportadora Vertical
   m_EditorClassIdentifier: 
   nombre: Banda transportadora vertical
-  description: 
-  material: 
+  description: "Descripci\xF3n banda transportadora vertical"
+  material: Material banda transportadora vertical
