@@ -22,6 +22,8 @@
     transform-origin: bottom;
     align-content: flex-start;
     flex-basis: auto;
+    display: flex;
+    visibility: visible;
 }
 
 .InformationPanels {
@@ -48,4 +50,6 @@
     transform-origin: bottom;
     align-content: center;
     flex-basis: auto;
+    display: flex;
+    visibility: visible;
 }
