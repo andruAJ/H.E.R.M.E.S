@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eece84aa35cb7e84ca4a09443c60c2b6, type: 3}
   m_Name: Banda Transportador Horizontal
   m_EditorClassIdentifier: 
-  nombre: Banda trasnportadora horizontal
+  nombre: Banda transportadora horizontal
   description: "Descripci\xF3n banda transportadora horizontal"
   material: Material banda transportadora horizontal

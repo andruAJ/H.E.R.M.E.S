@@ -21,6 +21,7 @@ public class InspectorEvents : MonoBehaviour
 
     public static event Action<int> OnRotatingLeft;
     public static event Action<int> OnRotatingRight;
+    public static event Action<bool> OnExploding;
 
     public Animator animator;
 
@@ -107,6 +108,7 @@ public class InspectorEvents : MonoBehaviour
             animator.SetTrigger("Exploding");
             explode = false;
             de_explode = true;
+            OnExploding.Invoke(true);
             Debug.Log("Explosion");
         }
         else if (de_explode) 
@@ -114,6 +116,7 @@ public class InspectorEvents : MonoBehaviour
             animator.SetTrigger("De-exploding");
             de_explode = false;
             regroup = true;
+            OnExploding.Invoke(false);
             GameObject bordeCorte = null;
             GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
             foreach (GameObject obj in allObjects)
