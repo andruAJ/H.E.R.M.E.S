@@ -336,6 +336,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3302087407034138929, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
   m_PrefabInstance: {fileID: 8937565049196301120}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1003761476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 788021464965921525, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+  m_PrefabInstance: {fileID: 8937565049196301120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1025023116
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +732,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   asientos1: {fileID: 120142268}
   asientos2: {fileID: 1772523860}
+  bandaHorizontal: {fileID: 1003761476}
 --- !u!1001 &8937565049196301120
 PrefabInstance:
   m_ObjectHideFlags: 0
