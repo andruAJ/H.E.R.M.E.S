@@ -2,6 +2,7 @@ using Mono.Cecil.Cil;
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class InspectorEvents : MonoBehaviour
@@ -11,6 +12,7 @@ public class InspectorEvents : MonoBehaviour
     private Button rotateRightButton;
     private Button lupa;
     private Button capas;
+    private Button home;
     private VisualElement informationPanel;
 
     private bool isRotatingLeft = false;
@@ -24,6 +26,10 @@ public class InspectorEvents : MonoBehaviour
     public static event Action<bool> OnExploding;
 
     public Animator animator;
+
+    public GameObject asientos1;
+    public GameObject asientos2;
+    public GameObject bandaHorizontal;
 
     void Start()
     {
@@ -65,6 +71,8 @@ public class InspectorEvents : MonoBehaviour
         lupa.RegisterCallback<ClickEvent>(ZoomEvent);
         capas = uiDocument.rootVisualElement.Q("capas") as Button;
         capas.RegisterCallback<ClickEvent>(CapasEvent);
+        home = uiDocument.rootVisualElement.Q("Home") as Button;
+        home.RegisterCallback<ClickEvent>(ReturnToMenu);
 
         if (rotateLeftButton == null || rotateRightButton == null || lupa == null || capas == null)
         {
@@ -82,7 +90,7 @@ public class InspectorEvents : MonoBehaviour
         {
             GameObject panelInferior = GameObject.FindWithTag("Panel inferior");
             GameObject panelSuperior = GameObject.FindWithTag("Panel superior");
-            GameObject bandaHorizontal = GameObject.FindWithTag("Banda transportadora horizontal").transform.GetChild(0).gameObject;
+
             GameObject bordeCorte = null;
             GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
             foreach (GameObject obj in allObjects)
@@ -97,6 +105,8 @@ public class InspectorEvents : MonoBehaviour
             panelInferior.SetActive(false);
             panelSuperior.SetActive(false);
             bandaHorizontal.SetActive(false);
+            asientos1.SetActive(false);
+            asientos2.SetActive(false);
             bordeCorte.SetActive(true);
 
             explode = true;
@@ -135,7 +145,6 @@ public class InspectorEvents : MonoBehaviour
         {
             GameObject panelInferior = null;
             GameObject panelSuperior = null;
-            GameObject bandaHorizontal = null;
             GameObject bordeCorte = GameObject.FindWithTag("Borde corte");
             GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
             foreach (GameObject obj in allObjects)
@@ -149,19 +158,20 @@ public class InspectorEvents : MonoBehaviour
                 {
                     panelSuperior = obj;
                     panelSuperior.SetActive(true);
-                }
-                else if (obj.CompareTag("Banda transportadora horizontal"))
-                {
-                    bandaHorizontal = obj.transform.GetChild(0).gameObject;
-                    bandaHorizontal.SetActive(true);
-                }
-            }    
+                }             
+            }
+            bandaHorizontal.SetActive(true);
+            asientos1.SetActive(true);
+            asientos2.SetActive(true);
             bordeCorte.SetActive(false);
             regroup = false;
             Debug.Log("re agrupando");
         }
     }
-
+    private void ReturnToMenu(ClickEvent evt) 
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     private void Update()
     {
         if (isRotatingLeft)
