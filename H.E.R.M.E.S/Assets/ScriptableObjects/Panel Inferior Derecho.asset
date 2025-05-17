@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Panel Inferior Derecho
   m_EditorClassIdentifier: 
   nombre: Panel inferior derecho
-  description: "Descripci\xF3n panel inferior derecho"
-  material: Material panel inferior derecho
+  description: "Protecci\xF3n de los elementos internos del tren"
+  material: "Pol\xEDmero permeable"

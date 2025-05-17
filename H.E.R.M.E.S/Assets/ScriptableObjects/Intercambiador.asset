@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Intercambiador
   m_EditorClassIdentifier: 
   nombre: Intercambiador
-  description: "Descripci\xF3n intercambiador"
-  material: Material intercambiador
+  description: El intercambiador es una pieza que, como si fuera un muelle, se estira
+    para poder formar parte de la banda vertical y se contrae para formar parte de
+    la horizontal
+  material: "Aleaci\xF3n entre carbono, aluminio y zinc"

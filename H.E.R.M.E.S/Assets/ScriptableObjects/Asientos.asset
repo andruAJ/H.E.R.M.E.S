@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Asientos
   m_EditorClassIdentifier: 
   nombre: Asientos
-  description: "Descripci\xF3n asientos"
-  material: Material asientos
+  description: "Pueden ir de 20 a 25 personas sentadas m\xE1s 10 paradas en cabina"
+  material: "Pl\xE1stico duro"

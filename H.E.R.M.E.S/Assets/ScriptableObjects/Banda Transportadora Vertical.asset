@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Banda Transportadora Vertical
   m_EditorClassIdentifier: 
   nombre: Banda transportadora vertical
-  description: "Descripci\xF3n banda transportadora vertical"
-  material: Material banda transportadora vertical
+  description: "Permite el desplazamiento en el riel de la c\xE1psula"
+  material: "Aleaci\xF3n entre carbono, aluminio y zinc"

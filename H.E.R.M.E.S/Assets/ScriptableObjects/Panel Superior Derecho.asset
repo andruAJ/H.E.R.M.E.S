@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Panel Superior Derecho
   m_EditorClassIdentifier: 
   nombre: Panel superior derecho
-  description: "Descripci\xF3n panel superior derecho"
-  material: Material panel superior derecho
+  description: "Permite cierto flujo de luz y aire para que la temperatura de la
+    esfera pueda regularse en caso de que la ventilaci\xF3n presente inconvenientes"
+  material: "Pol\xEDmero permeable transparente"

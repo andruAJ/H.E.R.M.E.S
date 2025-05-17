@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Banda Transportador Horizontal
   m_EditorClassIdentifier: 
   nombre: Banda transportadora horizontal
-  description: "Descripci\xF3n banda transportadora horizontal"
-  material: Material banda transportadora horizontal
+  description: Permite el almacenamiento de equipaje y primeros auxilios
+  material: "Aleaci\xF3n entre carbono, aluminio y zinc"
