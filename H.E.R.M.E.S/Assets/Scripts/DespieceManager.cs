@@ -15,6 +15,8 @@ public class DespieceManager : MonoBehaviour
     public CapasInformation bandaTransVert;
     public CapasInformation bandaTransHoriz;
     public CapasInformation intercambiador;
+    public CapasInformation bateria;
+    public CapasInformation oruga;
     public bool isExploding = false;
     void Start()
     {
@@ -78,6 +80,14 @@ public class DespieceManager : MonoBehaviour
                         case "Intercambiador":
                             informationPanel.style.display = DisplayStyle.Flex;
                             informationPanel.Bind(new SerializedObject(intercambiador));
+                            break;
+                        case "Bateria":
+                            informationPanel.style.display = DisplayStyle.Flex;
+                            informationPanel.Bind(new SerializedObject(bateria));
+                            break;
+                        case "Oruga":
+                            informationPanel.style.display = DisplayStyle.Flex;
+                            informationPanel.Bind(new SerializedObject(oruga));
                             break;
                     }
                 }

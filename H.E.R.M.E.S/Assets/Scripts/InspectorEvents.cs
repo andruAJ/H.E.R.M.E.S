@@ -20,16 +20,23 @@ public class InspectorEvents : MonoBehaviour
     private bool explode = false;
     private bool de_explode = false;
     private bool regroup = false;
+    private bool zoomIn = true;
+    private bool zoomOut = false;
 
     public static event Action<int> OnRotatingLeft;
     public static event Action<int> OnRotatingRight;
     public static event Action<bool> OnExploding;
+    public static event Action<bool> OnZoomin;
 
     public Animator animator;
 
     public GameObject asientos1;
     public GameObject asientos2;
     public GameObject bandaHorizontal;
+
+    public Texture2D customCursor;
+    public Vector2 hotspot = Vector2.zero;
+    public CursorMode cursorMode = CursorMode.Auto;
 
     void Start()
     {
@@ -82,7 +89,22 @@ public class InspectorEvents : MonoBehaviour
     }
     private void ZoomEvent(ClickEvent evt) 
     {
-        
+        if (zoomIn) 
+        {
+            //aqui se debe cambiar el sprite del mouse e invocar el evento
+            UnityEngine.Cursor.SetCursor(customCursor, hotspot, cursorMode);
+            OnZoomin?.Invoke(zoomIn);
+            zoomIn = false;
+            zoomOut = true;
+        }
+        else if (zoomOut) 
+        {
+            //aqui se debe cambiar el sprite del mouse 
+            UnityEngine.Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            OnZoomin?.Invoke(zoomIn);
+            zoomIn = true;
+            zoomOut = false;
+        }
     }
     private void CapasEvent(ClickEvent evt)
     {
