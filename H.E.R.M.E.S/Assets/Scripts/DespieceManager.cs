@@ -29,7 +29,7 @@ public class DespieceManager : MonoBehaviour
         informationPanel = document.rootVisualElement.Q("InformationPanel") as VisualElement;
         if (informationPanel != null)
         {
-            Debug.Log("NamePanel no encontrado");
+            //Debug.Log("NamePanel no encontrado");
         }
         InspectorEvents.OnExploding += hasExploded;
     }
@@ -53,7 +53,6 @@ public class DespieceManager : MonoBehaviour
                             informationPanel.Bind(new SerializedObject(asientos));
                             break;
                         case "Panel superior":
-                            Debug.Log("Data: " + panelSupIzq);
                             informationPanel.style.display = DisplayStyle.Flex;
                             informationPanel.Bind(new SerializedObject(panelSupIzq));
                             break;

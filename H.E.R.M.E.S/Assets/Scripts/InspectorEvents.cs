@@ -141,7 +141,6 @@ public class InspectorEvents : MonoBehaviour
             explode = false;
             de_explode = true;
             OnExploding.Invoke(true);
-            Debug.Log("Explosion");
         }
         else if (de_explode) 
         {
@@ -161,7 +160,6 @@ public class InspectorEvents : MonoBehaviour
             }
             bordeCorte.SetActive(true);
             animator.SetTrigger("GoingToIdle");
-            Debug.Log("De exploding");
         }
         else if (regroup) 
         {
