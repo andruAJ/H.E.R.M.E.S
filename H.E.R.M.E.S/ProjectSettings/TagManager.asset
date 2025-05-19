@@ -17,6 +17,8 @@ TagManager:
   - panel inferior derecho
   - Bateria
   - Oruga
+  - Estacion
+  - CambioDireccion
   layers:
   - Default
   - TransparentFX

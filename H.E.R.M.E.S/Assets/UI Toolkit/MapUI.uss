@@ -1,0 +1,24 @@
+.panels {
+    padding-top: 19px;
+    padding-right: 19px;
+    padding-bottom: 19px;
+    padding-left: 19px;
+    margin-top: 8px;
+    margin-right: 11px;
+    margin-left: 11px;
+    margin-bottom: 6px;
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    border-top-left-radius: 55px;
+    border-top-right-radius: 55px;
+    border-bottom-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    height: 100%;
+    background-color: rgb(242, 242, 242);
+}
