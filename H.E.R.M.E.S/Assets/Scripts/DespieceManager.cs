@@ -1,7 +1,7 @@
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEditor.UIElements;
 
 public class DespieceManager : MonoBehaviour
 {
@@ -50,43 +50,43 @@ public class DespieceManager : MonoBehaviour
                     {
                         case "Asientos":
                             informationPanel.style.display = DisplayStyle.Flex;
-                            informationPanel.Bind(new SerializedObject(asientos));
+                            ActualizarPanelConDatos(asientos);
                             break;
                         case "Panel superior":
                             informationPanel.style.display = DisplayStyle.Flex;
-                            informationPanel.Bind(new SerializedObject(panelSupIzq));
+                            ActualizarPanelConDatos(panelSupIzq);
                             break;
                         case "Panel inferior":
                             informationPanel.style.display = DisplayStyle.Flex;
-                            informationPanel.Bind(new SerializedObject(panelInfIzq));
+                            ActualizarPanelConDatos(panelInfIzq);
                             break;
                         case "Panell superior derecho":
                             informationPanel.style.display = DisplayStyle.Flex;
-                            informationPanel.Bind(new SerializedObject(panelSupDer));
+                            ActualizarPanelConDatos(panelSupDer);
                             break;
                         case "Panell inferior derecho":
                             informationPanel.style.display = DisplayStyle.Flex;
-                            informationPanel.Bind(new SerializedObject(panelInfDer));
+                            ActualizarPanelConDatos(panelInfDer);
                             break;
                         case "Banda transportadora vertical":
                             informationPanel.style.display = DisplayStyle.Flex;
-                            informationPanel.Bind(new SerializedObject(bandaTransVert));
+                            ActualizarPanelConDatos(bandaTransVert);
                             break;
                         case "Banda transportadora horizontal":
                             informationPanel.style.display = DisplayStyle.Flex;
-                            informationPanel.Bind(new SerializedObject(bandaTransHoriz));
+                            ActualizarPanelConDatos(bandaTransHoriz);
                             break;
                         case "Intercambiador":
                             informationPanel.style.display = DisplayStyle.Flex;
-                            informationPanel.Bind(new SerializedObject(intercambiador));
+                            ActualizarPanelConDatos(intercambiador);
                             break;
                         case "Bateria":
                             informationPanel.style.display = DisplayStyle.Flex;
-                            informationPanel.Bind(new SerializedObject(bateria));
+                            ActualizarPanelConDatos(bateria);
                             break;
                         case "Oruga":
                             informationPanel.style.display = DisplayStyle.Flex;
-                            informationPanel.Bind(new SerializedObject(oruga));
+                            ActualizarPanelConDatos(oruga);
                             break;
                     }
                 }
@@ -100,5 +100,15 @@ public class DespieceManager : MonoBehaviour
     public void hasExploded(bool state) 
     {
         isExploding = state;
+    }
+    private void ActualizarPanelConDatos(CapasInformation data)
+    {
+        var nombre = informationPanel.Q<Label>("Name");
+        var descripcion = informationPanel.Q<Label>("Description");
+        var material = informationPanel.Q<Label>("Material");
+
+        if (nombre != null) nombre.text = data.nombre;
+        if (descripcion != null) descripcion.text = data.description;
+        if (material != null) material.text = data.material;
     }
 }
