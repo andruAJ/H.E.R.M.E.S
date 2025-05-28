@@ -285,6 +285,8 @@ MonoBehaviour:
   bandaTransVert: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
   bandaTransHoriz: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
   intercambiador: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+  bateria: {fileID: 0}
+  oruga: {fileID: 0}
   isExploding: 0
 --- !u!4 &4559048190474316654 stripped
 Transform:
@@ -434,6 +436,8 @@ MonoBehaviour:
   bandaTransVert: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
   bandaTransHoriz: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
   intercambiador: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+  bateria: {fileID: 0}
+  oruga: {fileID: 0}
   isExploding: 0
 --- !u!114 &9001937925683261129
 MonoBehaviour:
@@ -510,6 +514,8 @@ MonoBehaviour:
   bandaTransVert: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
   bandaTransHoriz: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
   intercambiador: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+  bateria: {fileID: 0}
+  oruga: {fileID: 0}
   isExploding: 0
 --- !u!114 &9097888247286949201
 MonoBehaviour:
@@ -698,6 +704,8 @@ MonoBehaviour:
   bandaTransVert: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
   bandaTransHoriz: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
   intercambiador: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+  bateria: {fileID: 0}
+  oruga: {fileID: 0}
   isExploding: 0
 --- !u!1001 &6267529510816911647
 PrefabInstance:
@@ -864,6 +872,8 @@ MonoBehaviour:
   bandaTransVert: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
   bandaTransHoriz: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
   intercambiador: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+  bateria: {fileID: 0}
+  oruga: {fileID: 0}
   isExploding: 0
 --- !u!1001 &6292477421867423842
 PrefabInstance:
@@ -1025,6 +1035,8 @@ MonoBehaviour:
   bandaTransVert: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
   bandaTransHoriz: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
   intercambiador: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+  bateria: {fileID: 0}
+  oruga: {fileID: 0}
   isExploding: 0
 --- !u!1001 &7841757518859933833
 PrefabInstance:
@@ -1080,7 +1092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 16695ba307005664fb78fa3221f95814, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 16695ba307005664fb78fa3221f95814, type: 3}
       propertyPath: m_TagString
@@ -1252,6 +1264,8 @@ MonoBehaviour:
   bandaTransVert: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
   bandaTransHoriz: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
   intercambiador: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+  bateria: {fileID: 0}
+  oruga: {fileID: 0}
   isExploding: 0
 --- !u!4 &7535986928589996972 stripped
 Transform:
@@ -1405,6 +1419,8 @@ MonoBehaviour:
   bandaTransVert: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
   bandaTransHoriz: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
   intercambiador: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+  bateria: {fileID: 0}
+  oruga: {fileID: 0}
   isExploding: 0
 --- !u!114 &6609956304781770237
 MonoBehaviour:
@@ -1476,6 +1492,8 @@ MonoBehaviour:
   bandaTransVert: {fileID: 11400000, guid: fcb5e0edeadf19e428ef92fde53a0ef7, type: 2}
   bandaTransHoriz: {fileID: 11400000, guid: e3adb3cbb5c782d40869dccd04607ac8, type: 2}
   intercambiador: {fileID: 11400000, guid: 7a53499a5db152e448684e698890c46c, type: 2}
+  bateria: {fileID: 0}
+  oruga: {fileID: 0}
   isExploding: 0
 --- !u!114 &4772744281962393244
 MonoBehaviour:

@@ -3612,6 +3612,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Oruga
       objectReference: {fileID: 0}
+    - target: {fileID: 5868196496552785652, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868196496552785652, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 5895453018495986933, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -3623,6 +3631,14 @@ PrefabInstance:
     - target: {fileID: 5895453018495986933, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.1853
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223010192443590247, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0010000034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223010192443590247, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0004207439
       objectReference: {fileID: 0}
     - target: {fileID: 6291196693298537106, guid: 9c268de418fc51f408f7fc9e878696e0, type: 3}
       propertyPath: oruga

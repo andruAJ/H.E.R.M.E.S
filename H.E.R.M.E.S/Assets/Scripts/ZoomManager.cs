@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class ZoomManager : MonoBehaviour
 {
     private bool isZoomin = false;
+    private bool zoomClicked = false;
 
     public Texture2D customCursor;
     public Texture2D customCursorZoomIn;
@@ -42,40 +43,44 @@ public class ZoomManager : MonoBehaviour
 
         Transform clickedObject = hit.transform;
 
-        if (isZoomin)
+        if (zoomClicked) 
         {
-            // Si ya está haciendo zoom a este objeto => salir
-            if (clickedObject == target)
+            if (isZoomin)
             {
-                Debug.Log("Target: " + clickedObject.name);
+                // Si ya está haciendo zoom a este objeto => salir
+                if (clickedObject == target)
+                {
+                    Debug.Log("Target: " + clickedObject.name);
+                    StopAllCoroutines();
+                    StartCoroutine(SmoothMove(transform.position, originalPosition, transform.rotation, originalRotation));
+                    target = null;
+                    UnityEngine.Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    return;
+                }
+
+                // Nuevo objetivo de zoom
+                target = clickedObject;
+                Debug.Log("Target: " + target.name);
+
+                Vector3 direction = (transform.position - target.position).normalized;
+                Vector3 newPosition = target.position + direction * zoomDistance;
+                Quaternion newRotation = Quaternion.LookRotation(target.position - newPosition);
+
+                StopAllCoroutines();
+                StartCoroutine(SmoothMove(transform.position, newPosition, transform.rotation, newRotation));
+
+                UnityEngine.Cursor.SetCursor(customCursor, hotspot, cursorMode);
+            }
+            else
+            {
+                // Modo "zoom off" → siempre regresa a original
                 StopAllCoroutines();
                 StartCoroutine(SmoothMove(transform.position, originalPosition, transform.rotation, originalRotation));
                 target = null;
-                UnityEngine.Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                return;
+                UnityEngine.Cursor.SetCursor(customCursorZoomIn, Vector2.zero, CursorMode.Auto);
+                Debug.Log("el mouse se activo desde zoom manager");
             }
-
-            // Nuevo objetivo de zoom
-            target = clickedObject;
-            Debug.Log("Target: " + target.name);
-
-            Vector3 direction = (transform.position - target.position).normalized;
-            Vector3 newPosition = target.position + direction * zoomDistance;
-            Quaternion newRotation = Quaternion.LookRotation(target.position - newPosition);
-
-            StopAllCoroutines();
-            StartCoroutine(SmoothMove(transform.position, newPosition, transform.rotation, newRotation));
-
-            UnityEngine.Cursor.SetCursor(customCursor, hotspot, cursorMode);
-        }
-        else
-        {
-            // Modo "zoom off" → siempre regresa a original
-            StopAllCoroutines();
-            StartCoroutine(SmoothMove(transform.position, originalPosition, transform.rotation, originalRotation));
-            target = null;
-            UnityEngine.Cursor.SetCursor(customCursorZoomIn, Vector2.zero, CursorMode.Auto);
-        }
+        }      
     }
     private System.Collections.IEnumerator SmoothMove(Vector3 fromPos, Vector3 toPos, Quaternion fromRot, Quaternion toRot)
     {
@@ -90,9 +95,11 @@ public class ZoomManager : MonoBehaviour
 
         transform.position = toPos;
         transform.rotation = toRot;
+        zoomClicked = false;
     }
     public void ZoomIn(bool isZooming) 
     {
         isZoomin = isZooming;
+        zoomClicked = isZooming;
     }
 }

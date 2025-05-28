@@ -1,5 +1,3 @@
-using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -44,36 +42,36 @@ public class HoverManager : MonoBehaviour
             {
                 case "Asientos":
                     namePanel.style.display = DisplayStyle.Flex;
-                    namePanel.Bind(new SerializedObject(asientos));
+                    ActualizarPanelConDatos(asientos);
                     break;
                 case "Panel superior":
                     Debug.Log("Data: " + panelSupIzq);
                     namePanel.style.display = DisplayStyle.Flex;
-                    namePanel.Bind(new SerializedObject(panelSupIzq));
+                    ActualizarPanelConDatos(panelSupIzq);
                     break;
                 case "Panel inferior":
                     namePanel.style.display = DisplayStyle.Flex;
-                    namePanel.Bind(new SerializedObject(panelInfIzq));
+                    ActualizarPanelConDatos(panelInfIzq);
                     break;
                 case "Panell superior derecho":
                     namePanel.style.display = DisplayStyle.Flex;
-                    namePanel.Bind(new SerializedObject(panelSupDer));
+                    ActualizarPanelConDatos(panelSupDer);
                     break;
                 case "Panell inferior derecho":
                     namePanel.style.display = DisplayStyle.Flex;
-                    namePanel.Bind(new SerializedObject(panelInfDer));
+                    ActualizarPanelConDatos(panelInfDer);
                     break;
                 case "Banda transportadora vertical":
                     namePanel.style.display = DisplayStyle.Flex;
-                    namePanel.Bind(new SerializedObject(bandaTransVert));
+                    ActualizarPanelConDatos(bandaTransVert);
                     break;
                 case "Banda transportadora horizontal":
                     namePanel.style.display = DisplayStyle.Flex;
-                    namePanel.Bind(new SerializedObject(bandaTransHoriz));
+                    ActualizarPanelConDatos(bandaTransHoriz);
                     break;
                 case "Intercambiador":
                     namePanel.style.display = DisplayStyle.Flex;
-                    namePanel.Bind(new SerializedObject(intercambiador));
+                    ActualizarPanelConDatos(intercambiador);
                     break;
             }
         }        
@@ -81,6 +79,11 @@ public class HoverManager : MonoBehaviour
     private void OnMouseExit() 
     {
         namePanel.style.display = DisplayStyle.None;
+    }
+    private void ActualizarPanelConDatos(CapasInformation data)
+    {
+        var nombre = namePanel.Q<Label>("Name");
+        if (nombre != null) nombre.text = data.nombre;
     }
     public void hasExploded(bool state)
     {

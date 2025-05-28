@@ -1,6 +1,4 @@
-using Mono.Cecil.Cil;
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -93,6 +91,7 @@ public class InspectorEvents : MonoBehaviour
         {
             //aqui se debe cambiar el sprite del mouse e invocar el evento
             UnityEngine.Cursor.SetCursor(customCursor, hotspot, cursorMode);
+            Debug.Log("el mouse se activo desde InspectorEvents");
             OnZoomin?.Invoke(zoomIn);
             zoomIn = false;
             zoomOut = true;
