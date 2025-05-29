@@ -8,6 +8,7 @@ public class Scenemanager : MonoBehaviour
     private Button modelo;
     private Button mapa;
     private Button video;
+    private Button salir;
     private string escena;
     void Start()
     {
@@ -30,9 +31,15 @@ public class Scenemanager : MonoBehaviour
             escena = "VideoScene";
             ChangeScene(escena);
         });
+        salir = uiDocument.rootVisualElement.Q("Salir") as Button;
+        salir.RegisterCallback<ClickEvent>(Salir);
     }
     private void ChangeScene(string scene) 
     {
         SceneManager.LoadScene(scene);
+    }
+    private void Salir(ClickEvent evt) 
+    {
+        Application.Quit();
     }
 }

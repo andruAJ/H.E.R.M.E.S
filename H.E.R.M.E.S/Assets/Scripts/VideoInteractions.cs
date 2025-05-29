@@ -16,8 +16,4 @@ public class VideoInteractions : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
-    void Update()
-    {
-        
-    }
 }
