@@ -3,86 +3,68 @@ using UnityEngine.EventSystems;
 
 public class ZoomManager : MonoBehaviour
 {
-    private bool isZoomin = false;
-    private bool zoomClicked = false;
-
     public Texture2D customCursor;
     public Texture2D customCursorZoomIn;
     public Vector2 hotspot = Vector2.zero;
     public CursorMode cursorMode = CursorMode.Auto;
 
-    public float zoomDistance = 5f;      // Distancia deseada entre cámara y este objeto
-    public float zoomSpeed = 5f;         // Velocidad del movimiento
+    public float zoomDistance = 5f;
+    public float zoomSpeed = 5f;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
 
-    public Transform target;
+    private Transform target;
+
+    private bool isZoomMode = false;   // Si se activó el botón de zoom
+    private bool isZoomedIn = false;   // Si la cámara ya está acercada a un objeto
 
     void Start()
     {
-        // Guarda la posición y rotación inicial
         originalPosition = transform.position;
         originalRotation = transform.rotation;
-        InspectorEvents.OnZoomin += ZoomIn;
-    }
-    private void OnDestroy()
-    {
-        InspectorEvents.OnZoomin -= ZoomIn;
+        InspectorEvents.OnZoomin += ToggleZoomMode;
     }
 
-    // Update is called once per frame
+    void OnDestroy()
+    {
+        InspectorEvents.OnZoomin -= ToggleZoomMode;
+    }
+
     void Update()
     {
-        //if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-        //return;    
-        //if (!zoomClicked) return;
+        if (!isZoomMode) return;
         if (!Input.GetMouseButtonDown(0)) return;
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (!Physics.Raycast(ray, out RaycastHit hit)) return;
 
         Transform clickedObject = hit.transform;
 
-        //if (zoomClicked) 
-        //{
-            if (isZoomin)
-            {
-                // Si ya está haciendo zoom a este objeto => salir
-                if (clickedObject == target)
-                {
-                    Debug.Log("Target: " + clickedObject.name);
-                    StopAllCoroutines();
-                    StartCoroutine(SmoothMove(transform.position, originalPosition, transform.rotation, originalRotation));
-                    target = null;
-                    UnityEngine.Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                    return;
-                }
+        if (isZoomedIn && clickedObject == target)
+        {
+            // Zoom out
+            StopAllCoroutines();
+            StartCoroutine(SmoothMove(transform.position, originalPosition, transform.rotation, originalRotation));
+            UnityEngine.Cursor.SetCursor(customCursorZoomIn, hotspot, cursorMode);
+            isZoomedIn = false;
+            target = null;
+            return;
+        }
 
-                // Nuevo objetivo de zoom
-                target = clickedObject;
-                Debug.Log("Target: " + target.name);
+        // Zoom in to new target
+        target = clickedObject;
+        Vector3 direction = (transform.position - target.position).normalized;
+        Vector3 newPosition = target.position + direction * zoomDistance;
+        Quaternion newRotation = Quaternion.LookRotation(target.position - newPosition);
 
-                Vector3 direction = (transform.position - target.position).normalized;
-                Vector3 newPosition = target.position + direction * zoomDistance;
-                Quaternion newRotation = Quaternion.LookRotation(target.position - newPosition);
-
-                StopAllCoroutines();
-                StartCoroutine(SmoothMove(transform.position, newPosition, transform.rotation, newRotation));
-
-                UnityEngine.Cursor.SetCursor(customCursor, hotspot, cursorMode);
-            }
-            else
-            {
-                // Modo "zoom off" → siempre regresa a original
-                StopAllCoroutines();
-                StartCoroutine(SmoothMove(transform.position, originalPosition, transform.rotation, originalRotation));
-                target = null;
-                UnityEngine.Cursor.SetCursor(customCursorZoomIn, Vector2.zero, CursorMode.Auto);
-                Debug.Log("el mouse se activo desde zoom manager");
-            }
-        //}      
+        StopAllCoroutines();
+        StartCoroutine(SmoothMove(transform.position, newPosition, transform.rotation, newRotation));
+        UnityEngine.Cursor.SetCursor(customCursor, hotspot, cursorMode);
+        isZoomedIn = true;
     }
+
     private System.Collections.IEnumerator SmoothMove(Vector3 fromPos, Vector3 toPos, Quaternion fromRot, Quaternion toRot)
     {
         float elapsed = 0f;
@@ -96,21 +78,21 @@ public class ZoomManager : MonoBehaviour
 
         transform.position = toPos;
         transform.rotation = toRot;
-        zoomClicked = false;
     }
-    public void ZoomIn(bool isZooming) 
-    {
-        isZoomin = isZooming;
-        //zoomClicked = isZooming;
 
-        if (isZoomin)
+    public void ToggleZoomMode(bool enable)
+    {
+        isZoomMode = enable;
+        isZoomedIn = false;
+        target = null;
+
+        if (isZoomMode)
         {
             UnityEngine.Cursor.SetCursor(customCursorZoomIn, hotspot, cursorMode);
         }
         else
         {
             UnityEngine.Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            target = null;
         }
     }
 }
