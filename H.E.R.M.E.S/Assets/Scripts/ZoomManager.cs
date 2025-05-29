@@ -35,7 +35,8 @@ public class ZoomManager : MonoBehaviour
     void Update()
     {
         //if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-            //return;    
+        //return;    
+        //if (!zoomClicked) return;
         if (!Input.GetMouseButtonDown(0)) return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -43,8 +44,8 @@ public class ZoomManager : MonoBehaviour
 
         Transform clickedObject = hit.transform;
 
-        if (zoomClicked) 
-        {
+        //if (zoomClicked) 
+        //{
             if (isZoomin)
             {
                 // Si ya está haciendo zoom a este objeto => salir
@@ -80,7 +81,7 @@ public class ZoomManager : MonoBehaviour
                 UnityEngine.Cursor.SetCursor(customCursorZoomIn, Vector2.zero, CursorMode.Auto);
                 Debug.Log("el mouse se activo desde zoom manager");
             }
-        }      
+        //}      
     }
     private System.Collections.IEnumerator SmoothMove(Vector3 fromPos, Vector3 toPos, Quaternion fromRot, Quaternion toRot)
     {
@@ -100,6 +101,16 @@ public class ZoomManager : MonoBehaviour
     public void ZoomIn(bool isZooming) 
     {
         isZoomin = isZooming;
-        zoomClicked = isZooming;
+        //zoomClicked = isZooming;
+
+        if (isZoomin)
+        {
+            UnityEngine.Cursor.SetCursor(customCursorZoomIn, hotspot, cursorMode);
+        }
+        else
+        {
+            UnityEngine.Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            target = null;
+        }
     }
 }
