@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b666aaa306e41d48b7596bd87926819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoTexture: {fileID: 8400000, guid: 28ef0f7921cbf0140a6a171e4eb3b350, type: 2}
+  videoTexture: {fileID: 8400000, guid: 4ddb70e532fefc54997f6d6bc4798826, type: 2}
 --- !u!4 &1739382639
 Transform:
   m_ObjectHideFlags: 0

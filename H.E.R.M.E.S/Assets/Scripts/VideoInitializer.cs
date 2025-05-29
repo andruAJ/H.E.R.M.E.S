@@ -9,7 +9,7 @@ public class VideoInitializer : MonoBehaviour
     {
         var player = gameObject.AddComponent<VideoPlayer>();
         player.source = VideoSource.Url;
-        player.url = System.IO.Path.Combine(Application.streamingAssetsPath, "Block in 10001-2450.mp4");
+        player.url = System.IO.Path.Combine(Application.streamingAssetsPath, "VideoFinalVisualización.mp4");
         player.renderMode = VideoRenderMode.RenderTexture;
         player.targetTexture = videoTexture;
         player.playOnAwake = true;
